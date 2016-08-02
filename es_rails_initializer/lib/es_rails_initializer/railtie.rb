@@ -10,10 +10,10 @@ module EsRailsInitializer
       options = app.config.elasticsearch.merge(logger: Rails.logger)
       EsRailsInitializer.client = Elasticsearch::Client.new(options)
 
-      if defined?(Elasticsearch::Model)
+      if defined?(Elasticsearch::Model) && Elasticsearch::Model.respond_to?(:client=)
         Elasticsearch::Model.client = EsRailsInitializer.client
       end
-      if defined?(Elasticsearch::Persistence)
+      if defined?(Elasticsearch::Persistence) && Elasticsearch::Persistence.respond_to?(:client=)
         Elasticsearch::Persistence.client = EsRailsInitializer.client
       end
     end
