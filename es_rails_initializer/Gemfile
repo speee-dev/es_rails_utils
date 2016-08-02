@@ -1,0 +1,11 @@
+source 'https://rubygems.org'
+
+gemspec
+
+group :test do
+  gem 'pry-byebug'
+  gem 'railties', ENV['RAILS_VERSION'] || '5.0.0', require: 'rails/railtie'
+  gem 'elasticsearch'
+  gem 'elasticsearch-model'
+  gem 'elasticsearch-persistence'
+end
