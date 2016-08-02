@@ -4,8 +4,8 @@ gemspec
 
 group :test do
   gem 'pry-byebug'
-  gem 'railties', ENV['RAILS_VERSION'] || '5.0.0', require: 'rails/railtie'
-  gem 'elasticsearch'
-  gem 'elasticsearch-model'
-  gem 'elasticsearch-persistence'
+  gem 'railties',                  ENV['RAILS_VERSION']               || '5.0.0', require: 'rails/railtie'
+  gem 'elasticsearch',             ENV['ELASTICSEARCH_RUBY_VERSION']  || '2.0.0'
+  gem 'elasticsearch-model',       ENV['ELASTICSEARCH_RAILS_VERSION'] || '0.1.9'
+  gem 'elasticsearch-persistence', ENV['ELASTICSEARCH_RAILS_VERSION'] || '0.1.9'
 end
