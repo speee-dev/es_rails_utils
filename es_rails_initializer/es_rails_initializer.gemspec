@@ -17,6 +17,7 @@ You only have to add this gem in Gemfile and to write config/elasticsearch.yml."
   s.files = Dir['lib/**/*', 'MIT-LICENSE', 'README.md']
 
   s.add_runtime_dependency 'railties', '>= 4.0.0'
+  s.add_runtime_dependency 'activesupport', '>= 4.0.0'
   s.add_runtime_dependency 'elasticsearch-transport'
 
   s.add_development_dependency 'bundler'

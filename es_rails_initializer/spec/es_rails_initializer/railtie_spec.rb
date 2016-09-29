@@ -24,6 +24,10 @@ RSpec.describe EsRailsInitializer::Railtie do
       it 'load YAML/ERB and set config' do
         expect(app.config.elasticsearch['host']).to eq 'localhost'
       end
+
+      it 'creates config as HashWithIndifferentAccess' do
+        expect(app.config.elasticsearch).to be_kind_of(HashWithIndifferentAccess)
+      end
     end
   end
 

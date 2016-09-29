@@ -1,8 +1,10 @@
+require 'active_support/core_ext/hash/indifferent_access'
+
 module EsRailsInitializer
   class Railtie < ::Rails::Railtie
     initializer 'es_rails_initializer.load_config' do |app|
       yaml = app.root.join('config', 'elasticsearch.yml')
-      config = YAML.load(ERB.new(yaml.read).result)
+      config = YAML.load(ERB.new(yaml.read).result).with_indifferent_access
       app.config.elasticsearch = config[::Rails.env]
     end
 
